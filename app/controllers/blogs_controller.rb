@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  
+  before_action :check_login, only: [:new, :edit, :show]
 
   def top
     
@@ -69,6 +71,14 @@ class BlogsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_blog
       @blog = Blog.find(params[:id])
+    end
+    
+    def check_login
+      if logged_in?
+        
+      else
+        redirect_to new_session_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
