@@ -3,5 +3,26 @@
         <h1><%= @user.name %>のページ</h1>
 
         <p>メールアドレス: <%= @user.email %></p>
+        
+        <p>お気に入り一覧</p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th>Title</th>
+                <th>by</th>
+                <th colspan="1"></th>
+                </tr>
+            </thead>
+        
+            <tbody>
+                <% @blogs.each do |blog| %>
+                    <tr>
+                        <td><%= blog.title %></td>
+                        <td><%= blog.user.name %></td>
+                        <td><%= link_to 'Show', blog, class: 'btn btn-default btn-sm btn-primary' %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
     </div>
 </div>

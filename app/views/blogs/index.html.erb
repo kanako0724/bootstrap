@@ -15,8 +15,10 @@
             <td><%= blog.title %></td>
             <td><%= blog.content %></td>
             <td><%= link_to 'Show', blog, class: 'btn btn-default btn-sm btn-primary' %></td>
-            <td><%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-default btn-sm btn-primary' %></td>
-            <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-sm btn btn-danger' %></td>
+            <% if current_user.id == blog.user.id %>
+              <td><%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-default btn-sm btn-primary' %></td>
+              <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-default btn-sm btn btn-danger' %></td>
+            <% end %>
           </tr>
         <% end %>
       </tbody>
