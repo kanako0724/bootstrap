@@ -23,6 +23,14 @@
   
   <br>
   
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, class: 'filestyle', accept: 'image/jpg,image/jpeg,image/png,image/gif' %>
+    <%= form.hidden_field :image_cache %>
+  </div>
+  
+  <br>
+  
   <div class="actions">
     <%= form.submit nil, class: 'btn btn-primary' %>
   </div>

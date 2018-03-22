@@ -25,6 +25,10 @@
 
             <%= f.label :password_confirmation %>
             <%= f.password_field :password_confirmation, class: 'form-control' %>
+            
+            <%= f.label :image %>
+            <%= f.file_field :image, class: 'filestyle', accept: 'image/jpg,image/jpeg,image/png,image/gif' %>
+            <%= f.hidden_field :image_cache %>
 
             <br>
             

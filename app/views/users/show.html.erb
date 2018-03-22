@@ -4,6 +4,8 @@
 
         <p>メールアドレス: <%= @user.email %></p>
         
+        <p>Image:<%= image_tag(@user.image, :class => "img-responsive", :alt => "no_image") %></p>
+        
         <p>お気に入り一覧</p>
         <table class="table table-striped">
             <thead>
