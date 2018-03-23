@@ -314,7 +314,7 @@ $(document).on('turbolinks:load', function() {
 
 	$.fn.filestyle.defaults = {
 		'buttonText' : 'Choose file',
-		'iconName' : 'glyphicon glyphicon-folder-open',
+		'iconName' : 'fas fa-folder-open',
 		'buttonName' : 'btn-default',
 		'size' : 'nr',
 		'input' : true,
